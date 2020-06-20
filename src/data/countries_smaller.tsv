@@ -1,0 +1,296 @@
+
+code	continent	name
+AD	EU	Andorra
+AE	A	United Arab Emirates
+AF	A	Afghanistan
+AG	A	Antigua and Barbuda
+AI	A	Anguilla
+AL	A	Albania
+AM	A	Armenia
+AN	EU	Netherlands Antilles
+AO	AF	Angola
+AR	SA	Argentina
+AS	O	American Samoa
+AT	EU	Austria
+AU	AU	Australia
+AW	SA	Aruba
+AZ	A	Azerbaijan
+BA	EU	Bosnia and Herzegovina
+BB	NA	Barbados
+BD	A	Bangladesh
+BE	EU	Belgium
+BF	AF	Burkina Faso
+BG	EU	Bulgaria
+BH	A	Bahrain
+BI	AF	Burundi
+BJ	AF	Benin
+BM	NA	Bermuda
+BN	A	Brunei Darussalam
+BO	SA	Bolivia
+BR	SA	Brazil
+BS	NA	Bahamas
+BT	A	Bhutan
+BW	AF	Botswana
+BY	EU	Belarus
+BZ	NA	Belize
+CA	NA	Canada
+CD	AF	DR Congo
+CF	AF	Central African Republic
+CG	AF	Congo
+CH	EU	Switzerland
+CI	AF	Cote d'Ivoire
+CK	O	Cook Islands
+CL	SA	Chile
+CM	AF	Cameroon
+CN-RU	A	Rural China
+CN-UR	A	Urban China
+CN	A	China
+CO	SA	Colombia
+CR	NA	Costa Rica
+CS	EU	Czechoslovakia
+CU	NA	Cuba
+CV	AF	Cabo Verde
+CW	SA	Curacao
+CY	EU	Cyprus
+CZ	EU	Czech Republic
+DD	EU	German Democratic Republic
+DE-BD	EU	Baden
+DE-BY	EU	Bavaria
+DE-HB	EU	Bremen
+DE-HE	EU	Hesse
+DE-HH	EU	Hamburg
+DE-PR	EU	Prussia
+DE-SN	EU	Saxony
+DE-WU	EU	Wurttemberg
+DE	EU	Germany
+DJ	AF	Djibouti
+DK	EU	Denmark
+DM	NA	Dominica
+DO	NA	Dominican Republic
+DZ	AF	Algeria
+EC	SA	Ecuador
+EE	EU	Estonia
+EG	AF	Egypt
+EH	AF	Western Sahara
+ER	AF	Eritrea
+ES	EU	Spain
+ET	AF	Ethiopia
+FI	EU	Finland
+FJ	O	Fiji
+FK	SA	Falkland Islands
+FM	O	Micronesia
+FO	EU	Faroe Islands
+FR	EU	France
+GA	AF	Gabon
+GB	EU	United Kingdom
+GD	NA	Grenada
+GE	EU	Georgia
+GH	AF	Ghana
+GI	EU	Gibraltar
+GL	NA	Greenland
+GM	AF	Gambia
+GN	AF	Guinea
+GQ	AF	Equatorial Guinea
+GR	EU	Greece
+GT	NA	Guatemala
+GU	O	Guam
+GW	AF	Guinea-Bissau
+GY	SA	Guyana
+HK	A	Hong Kong
+HN	NA	Honduras
+HR	EU	Croatia
+HT	NA	Haiti
+HU	EU	Hungary
+ID	A	Indonesia
+IE	EU	Ireland
+IL	A	Israel
+IM	EU	Isle of Man
+IN	A	India
+IQ	A	Iraq
+IR	A	Iran
+IS	EU	Iceland
+IT	EU	Italy
+JM	NA	Jamaica
+JO	A	Jordan
+JP	A	Japan
+KE	AF	Kenya
+KG	A	Kyrgyzstan
+KH	A	Cambodia
+KI	O	Kiribati
+KM	AF	Comoros
+KN	NA	Saint Kitts and Nevis
+KP	A	North Korea
+KR	A	Korea
+KS	EU	Kosovo
+KW	A	Kuwait
+KY	NA	Cayman Islands
+KZ	A	Kazakhstan
+LA	A	Lao PDR
+LB	A	Lebanon
+LC	NA	Saint Lucia
+LI	EU	Liechtenstein
+LK	A	Sri Lanka
+LR	AF	Liberia
+LS	AF	Lesotho
+LT	EU	Lithuania
+LU	EU	Luxembourg
+LV	EU	Latvia
+LY	AF	Libya
+MA	AF	Morocco
+MC	EU	Monaco
+MD	EU	Moldova
+ME	EU	Montenegro
+MG	AF	Madagascar
+MH	O	Marshall Islands
+MK	EU	Macedonia
+ML	AF	Mali
+MM	A	Myanmar
+MN	A	Mongolia
+MO	A	Macao
+MP	O	Northern Mariana Islands
+MR	AF	Mauritania
+MS	NA	Montserrat
+MT	EU	Malta
+MU	AF	Mauritius
+MV	A	Maldives
+MW	AF	Malawi
+MX	NA	Mexico
+MY	A	Malaysia
+MZ	AF	Mozambique
+NA	AF	Namibia
+NC	O	New Caledonia
+NE	AF	Niger
+NG	AF	Nigeria
+NI	NA	Nicaragua
+NL	EU	Netherlands
+NO	EU	Norway
+NP	A	Nepal
+NR	O	Nauru
+NU	O	Niue
+NZ	O	New Zealand
+OM	A	Oman
+PA	NA	Panama
+PE	SA	Peru
+PF	O	French Polynesia
+PG	O	Papua New Guinea
+PH	A	Philippines
+PK	A	Pakistan
+PL	EU	Poland
+PM	NA	Saint Pierre and Miquelon
+PR	NA	Puerto Rico
+PS	A	Palestine
+PT	EU	Portugal
+PW	O	Palau
+PY	SA	Paraguay
+QA	A	Qatar
+RO	EU	Romania
+RS	EU	Serbia
+RU	RU	Russian Federation
+RW	A	Rwanda
+SA	AF	Saudi Arabia
+SB	O	Solomon Islands
+SC	AF	Seychelles
+SD	AF	Sudan
+SE	EU	Sweden
+SG	A	Singapore
+SH	AF	Saint Helena
+SI	EU	Slovenia
+SK	EU	Slovakia
+SL	AF	Sierra Leone
+SM	EU	San Marino
+SN	AF	Senegal
+SO	AF	Somalia
+SR	SA	Suriname
+SS	AF	South Sudan
+ST	AF	Sao Tome and Principe
+SU	RU	USSR
+SV	NA	El Salvador
+SX	NA	Sint Maarten (Dutch part)
+SY	A	Syrian Arab Republic
+SZ	AF	Swaziland
+TC	NA	Turks and Caicos Islands
+TD	AF	Chad
+TG	AF	Togo
+TH	A	Thailand
+TJ	A	Tajikistan
+TK	O	Tokelau
+TL	A	Timor-Leste
+TM	A	Turkmenistan
+TN	AF	Tunisia
+TO	O	Tonga
+TR	A	Turkey
+TT	SA	Trinidad and Tobago
+TV	O	Tuvalu
+TW	A	Taiwan
+TZ	AF	Tanzania
+UA	EU	Ukraine
+UG	AF	Uganda
+US-AK	NA	Alaska
+US-AL	NA	Alabama
+US-AR	NA	Arkansas
+US-AZ	NA	Arizona
+US-CA	NA	California
+US-CO	NA	Colorado
+US-CT	NA	Connecticut
+US-DC	NA	District of Columbia
+US-DE	NA	Delaware
+US-FL	NA	Florida
+US-GA	NA	Georgia
+US-HI	NA	Hawaii
+US-IA	NA	Iowa
+US-ID	NA	Idaho
+US-IL	NA	Illinois
+US-IN	NA	Indiana
+US-KS	NA	Kansas
+US-KY	NA	Kentucky
+US-LA	NA	Louisiana
+US-MA	NA	Massachusetts
+US-MD	NA	Maryland
+US-ME	NA	Maine
+US-MI	NA	Michigan
+US-MN	NA	Minnesota
+US-MO	NA	Missouri
+US-MS	NA	Mississippi
+US-MT	NA	Montana
+US-NC	NA	North Carolina
+US-ND	NA	North Dakota
+US-NE	NA	Nebraska
+US-NH	NA	New Hampshire
+US-NJ	NA	New Jersey
+US-NM	NA	New Mexico
+US-NV	NA	Nevada
+US-NY	NA	New York
+US-OH	NA	Ohio
+US-OK	NA	Oklahoma
+US-OR	NA	Oregon
+US-PA	NA	Pennsylvania
+US-RI	NA	Rhode Island
+US-SC	NA	South Carolina
+US-SD	NA	South Dakota
+US-TN	NA	Tennessee
+US-TX	NA	Texas
+US-UT	NA	Utah
+US-VA	NA	Virginia
+US-VT	NA	Vermont
+US-WA	NA	Washington
+US-WI	NA	Wisconsin
+US-WV	NA	West Virginia
+US-WY	NA	Wyoming
+US	NA	USA
+UY	SA	Uruguay
+UZ	A	Uzbekistan
+VA	EU	Holy See
+VC	NA	Saint Vincent and the Grenadines
+VE	SA	Venezuela
+VG	NA	Virgin Islands, British
+VI	NA	Virgin Islands, US
+VN	A	Viet Nam
+VU	O	Vanuatu
+WF	O	Wallis and Futuna
+WS	O	Samoa
+YE	A	Yemen
+YU	EU	Yugoslavia
+ZA	AF	South Africa
+ZM	AF	Zambia
+ZW	AF	Zimbabwe
+ZZ	AF	Zanzibar

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <title>Map</title>
+</head>
+<style>
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .square {
+    height: 35px;
+    width: 35px;
+  }
+</style>
+
+<body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="../js/datamaps.world.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">InfoVis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="histogram.html">Histogram</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="time.html">Time</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cdf.html">CDF</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div id="container" style="height: 500px;" class="center-block col-sm-8">
+    </div>
+    <div class="text-center center-block col-sm-4" style="margin-top: 20px;">
+<p class="lead">Gini index, or Gini ratio, is a measure of statistical dispersion intended to represent the income or wealth distribution of a nation's residents, and is the most commonly used measurement of inequality.
+</p>
+<p class="lead">The coefficient ranges from 0 (or 0%) to 1 (or 100%), with 0 representing perfect equality and 1 representing perfect inequality. Values over 1 are theoretically possible due to negative income or wealth.</p>
+<h5>To interact with the map click in a country</h5>
+</div>
+
+    
+  </div>
+  <div style="margin: 15px;" class="row">
+    
+    <div class="col-xs square text-center align-middle" style="background-color: #F2F2F2;">
+      <p class="lead"><small>0</small></p>
+    </div>
+    <div class="col-xs square text-center" style="background-color: #A7E4F2;">
+      <p class="lead"><small>0.4</small></p>
+    </div>
+    <div class="col-xs square text-center" style="background-color: #72DBF2;">
+      <p class="lead"><small>0.5</small></p>
+    </div>
+    <div class="col-xs square text-center" style="background-color: #80D2F2;">
+      <p class="lead"><small>0.6</small></p>
+    </div>
+    <div class="col-xs square text-center" style="background-color: #6DBFF2;">
+      <p class="lead"><small>0.7</small></p>
+    </div>
+  </div>
+
+  <div id="barchart" class="row">
+    <div id="average" class="col">
+      <h5 class="h5 text-center">Gini Index<h5>
+    </div>
+    <div id="gini" class="col">
+      <h5 class="h5 text-center">Average Income</h5>
+    </div>
+  </div>
+  <script src="../js/map.js"></script>
+</body>
+
+</html>

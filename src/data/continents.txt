@@ -1,0 +1,40 @@
+code	continent	name
+QB	AF	Africa
+QC	AM	Americas
+QD	A	Asia
+QE	EU	Europe
+QF-MER	null
+QF	O	Oceania
+QG	AU	Australia and New Zealand
+QH	SA	Caribbean
+QI	NA	Central America
+QJ	A	Central Asia
+QK	AF	Eastern Africa
+QL	A	Eastern Asia
+QM	EU	Eastern Europe
+QN	AF	Middle Africa
+QO	AF	Northern Africa
+QP	NA	Northern America
+QQ	O	Oceania (excl. Australia and New Zealand)
+QR	SA	South America
+QS	A	South-Eastern Asia
+QT	AF	Southern Africa
+QU	A	Southern Asia
+QV	AF	Western Africa
+QW	A	Western Asia
+QX	EU	Western Europe
+QY	EU	European Union
+XA-MER	A	Asia (excluding Middle East), Market Exchange Rate
+XA	A	Asia (excl. Middle East)
+XF-MER	AF	Sub-Saharan Africa, Market Exchange Rate
+XF	AF	Sub-Saharan Africa
+XI	EU	Channel Islands
+XL-MER	SA	Latin America, Market Exchange Rate
+XL	SA	Latin America
+XM	ME	Middle East
+XN-MER	ME	Middle East and Northern Africa, Market Exchange Rate
+XN	ME	Middle East and Northern Africa
+XR-MER	RU	Russia and Ukraine, Market Exchange Rate
+XR	RU	Russia and Ukraine
+WO-MER	WO	World (Market Exchange Rate)
+WO	WO	World

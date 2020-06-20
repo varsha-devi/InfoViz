@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css" media="screen, print">
+			body { margin: 30px 50px; font-family: sans-serif; }
+		</style>
+		<title>Income 0, 50, 90, 95, 100 percentiles</title>
+	</head>
+	<body>
+		<h4>Comparison - Income 0, 50, 90, 95, 100 percentiles</h4>
+
+
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="./jquery.multiselect.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./jquery.multiselect.js"></script>
+	
+	
+	Select Country from List
+	<table width="100%">
+	<tr>
+	<td width="80%">
+	
+	<select name="basic[]" multiple="multiple" class="3col active" id="list">
+        <option value="AE">United Arab Emirates</option>
+        <option value="BH">Bahrain</option>
+        <option value="BR">Brazil</option>
+        <option value="CI">Cote d'Ivoire</option>
+        <option value="CN">China</option>
+        <option value="CN-RU">Rural China</option>
+        <option value="CN-UR">Urban China</option>
+        <option value="CZ">Czech Republic</option>
+        <option value="DE">Germany</option>
+        <option value="EG">Egypt</option>
+		
+		<option value="FR">France</option>
+		<option value="IN">India</option>
+		<option value="IQ">Iraq</option>
+		<option value="IR">Iran</option>
+		<option value="JO">Jordan</option>
+		<option value="KR">Korea</option>
+		<option value="KW">Kuwait</option>
+		<option value="LB">Lebanon</option>
+		<option value="MY">Malaysia</option>
+		<option value="OM">Oman</option>
+		
+			
+		<option value="PL">Poland</option>
+		<option value="PS">Palestine</option>
+		<option value="QA">Qatar</option>
+		<option value="RU">Russian Federation</option>
+		<option value="SA">Saudi Arabia</option>
+		<option value="SI">Singapore</option>
+		<option value="SY">Syrian Arab Republic</option>
+		<option value="TH">Thailand</option>
+		<option value="TR">Turkey</option>
+		<option value="US">USA</option>
+		
+		<option value="XF-MER">Sub-Saharan Africa</option>
+		<option value="XL">Latin America</option>
+		<option value="XL-MER">Latin America, Market Exchange Rate</option>
+		<option value="XM">Middle East</option>
+		<option value="XN">Middle East and Northern Africa</option>
+		<option value="XN-MER">Middle East and Northern Africa, Market Exchange Rate</option>
+		<option value="XR">Russia and Ukraine</option>
+		<option value="XR-MER">Russia and Ukraine, Market Exchange Rate</option>
+		<option value="YE">Yemen</option>
+		
+		
+    </select>
+
+
+	
+	</td>
+	<td>
+	
+	<button onclick="onButtonClick()">Draw</button>
+	</td>
+	</tr>
+	</table>
+	<style>
+	.legend {
+    font-size: 10px;
+    font-weight: bold;
+    } 
+	</style>
+
+		<script src="../vendor/d3/d3.js"></script>
+		<script>
+	
+ $(function () {
+        $('select[multiple].active.3col').multiselect({
+            columns: 6,
+            placeholder: 'Select Country',
+            search: true,
+            searchOptions: {
+                'default': 'Search Country'
+            },
+            selectAll: true
+        });
+
+    });
+//initialize array of 100 colors
+
+var colors = [];
+colors.push("#0048BA");
+colors.push("#D3212D");
+colors.push("#3B7A57");
+colors.push("#FFBF00");
+colors.push("#A9B2C3");
+colors.push("#FBCEB1");
+colors.push("#B2BEB5");
+colors.push("#FF91AF");
+colors.push("#3D2B1F");
+colors.push("#841B2D");
+
+
+while (colors.length < 50) {
+    do {
+        var color = Math.floor((Math.random()*4000000)+1);
+    } while (colors.indexOf(color) >= 0);
+    colors.push("#" + ("000000" + color.toString(16)).slice(-6));
+}
+
+//console.log(colors);			
+
+
+
+
+//initial settings of the graph
+	
+var margin = {top: 50, right: 100, bottom: 40, left: 100},
+    width = 1200 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0])
+    .domain([0, 1]);
+
+var svg = d3.select('body').append('svg')
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+	.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+//call ReDraw function on load for given countries
+var initselcted=["FR"];
+ReDraw(initselcted);
+
+function onButtonClick(){
+	//get values from checkbox list
+ var selected = $('#list').val();
+ //var selected_text = $('#list').text();
+		//console.log("function text "+ selected_text );
+	ReDraw(selected);
+}
+	
+function ReDraw(selected){
+		
+svg.selectAll("*").remove();
+//to load data
+var index=0 ; // aglobal variable to hold data
+
+//function loadData
+var listColors=colors;//["red","green"];
+var usedColors=[];//to hold used colors
+usedCountries=[]; // for lagends to store value
+var listCountry=selected;
+console.log(" country length "+listCountry.length)
+
+//make color as re the possible domain
+//var color = d3.scaleOrdinal(d3.schemeCategory20b);
+var color = d3.scaleOrdinal()
+  .domain(listCountry)
+  .range(listColors);
+
+
+for (c=0; c<listCountry.length; c++){
+console.log("value of c "+c)
+d3.tsv("../data/income/"+listCountry[c]+".txt", function(error, data) {
+	if(error) throw error;
+
+		console.log("value of c "+index)
+			console.log("value of country "+listCountry[index])
+				console.log("value of color "+listColors[index])
+
+    x.domain(d3.extent(data, d => +d.year)); // to read min and max values from an array of year
+	
+	//copy current color value for lagend usage
+	usedColors[index] = listColors[index];
+	usedCountries[index]=listCountry[index];
+	
+	//console.log("original color "+listColors[index]+" copied color "+usedColors[index])
+ 
+	p50 = data
+		.filter(d => +d.high == .5)
+		.sort((a, b) => +a.year - +b.year);
+
+	p90 = data
+		.filter(d => +d.high == .9)
+		.sort((a, b) => +a.year - +b.year);
+		
+	p95 = data
+		.filter(d => +d.high == .95)
+		.sort((a, b) => +a.year - +b.year);
+		
+	var ts = d3.line()
+		.x(function(d) { return x(+d.year); })
+		.y(function(d) { return y(+d.cumul); });
+
+console.log("color is "+ listColors[index] +" and index is "+index);
+
+
+	var l50 = svg.append("path").datum(p50)
+		.attr("d", ts)
+		.attr("stroke", listColors[index])
+		.attr("stroke-width", 2)
+		.attr("fill", "none")
+		.append("svg:title").text(listCountry[index])		;
+
+	var l90 = svg.append("path").datum(p90)
+		.attr("d", ts)
+		.attr("stroke", listColors[index])
+		.attr("stroke-width", 2)
+		.attr("fill", "none")
+		.append("svg:title").text(listCountry[index])		;
+
+	var l95 = svg.append("path").datum(p95)
+		.attr("d", ts)
+		.attr("stroke", listColors[index])
+		.attr("stroke-width", 2)
+		.attr("fill", "none")
+		.append("svg:title").text(listCountry[index])		;
+		
+
+
+	//append the legend
+    
+        
+        var legendRectSize = 10;                                  // NEW
+        var legendSpacing = 4;                                    // NEW
+
+//defining legedn		
+		var legend = svg.selectAll('.legend')                     // NEW
+          .data(color.domain())                                   // NEW
+          .enter()                                                // NEW
+          .append('g')                                            // NEW
+          .attr('class', 'legend')                                // NEW
+          .attr('transform', function(d, i) {                     // NEW
+            var height = legendRectSize + legendSpacing;          // NEW
+            var offset =  height * color.length / 2;     		  // NEW
+            var horz = width - 20 - offset - (i*(legendRectSize + legendSpacing+20)) ;                       // NEW
+            var vert = i * height + 10 - offset;                       // NEW
+            return 'translate(' + horz + ',' + height + ')';        // NEW
+          });                                                     // NEW
+		
+	//more about legendSpacing
+	        legend.append('rect')                                     // NEW
+          .attr('width', legendRectSize)                          // NEW
+          .attr('height', legendRectSize)                         // NEW
+          .style('fill', function(d){return color(d)})                                   // NEW
+          .style('stroke', function(d){return color(d)});                                // NEW
+//add text to legend
+   
+        legend.append('text')                                     // NEW
+          .attr('x', legendRectSize + legendSpacing)              // NEW
+          .attr('y', legendRectSize - legendSpacing) 
+		 .style("fill", function(d){return color(d)})		  // NEW
+          .text(function(d) { return d; });                       // NEW
+
+		
+		
+//end of legend work
+
+
+//}
+
+
+
+
+	
+	var l0 = svg.append("line")
+		.attr("x1", x(d3.min(data, d => +d.year)))
+		.attr("x2", x(d3.max(data, d => +d.year)))
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.attr("stroke", "black");
+		//.attr("stroke-width", 1);
+
+	var l100 = svg.append("line")
+		.attr("x1", x(d3.min(data, d => +d.year)))
+		.attr("x2", x(d3.max(data, d => +d.year)))
+		.attr("y1", y(1.))
+		.attr("y2", y(1.))
+		.attr("stroke", "black");
+		//.attr("stroke-width", 1);
+
+//append only in first time not onward
+
+if(index == 0){
+
+	var xAxis = d3.axisBottom(x)
+		.tickFormat(d3.format("d"));
+
+	svg.append('g')
+		.attr('transform', 'translate(0,' + (y(0)+5) +')')
+		.call(xAxis);
+}
+
+
+	svg.append('text')
+		.text("year")
+		.attr('text-anchor', 'end')
+		.attr('x', x(1))
+		.attr('y', y(0)+38);
+	
+	var yAxis = d3.axisRight(y);   
+	svg.append('g')
+		.attr('transform', 'translate(' + (x(d3.max(data, d => +d.year))+5) +')')
+		.call(yAxis);
+
+	svg.append('text')
+		.text("share of income")
+		.attr('transform', 'translate(' + (x(d3.max(data, d => +d.year))+45) +',' + y(1) + ') rotate(-90)')
+		.attr('text-anchor', 'end');
+	
+
+	svg.append('text')
+		.text("line 1 = 50%, line 2 = 90%, line 3 = 95%")
+		.attr('transform', 'translate(' + (x(d3.min(data, d => +d.year))-45) +',' + y(.5) + ') rotate(-90)')
+		.attr('text-anchor', 'middle');
+
+	l = data.filter(d => (+d.high == 1.) | (+d.high == .95) | (+d.high == .9) | (+d.high == .5))
+		.filter(d => +d.year == 1970);
+	
+	lf = d3.format('.2p')
+	svg.selectAll(".label")
+		.data(l).enter()
+		.append('text')
+			.text(d => lf(d.high))
+		.attr('x', d => x(+d.year)-5)
+		.attr('y', d => y(+d.cumul))
+		.attr('text-anchor', 'end');
+	index++;//increase index
+	console.log(l);
+
+});
+ }//end of for loop
+}//end of function
+		</script>
+		
+
+		
+	</body>
+</html>
